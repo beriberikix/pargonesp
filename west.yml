@@ -1,0 +1,17 @@
+manifest:
+  projects:
+    - name: zephyr
+      revision: v4.0.0
+      url: https://github.com/zephyrproject-rtos/zephyr
+      west-commands: scripts/west-commands.yml
+      import:
+        path-prefix: deps
+        name-allowlist:
+          - cmsis
+          - hal_nordic
+    - name: esp-flasher
+      url: https://github.com/espressif/esp-serial-flasher
+      revision: master
+      path: deps/modules/lib/esp_flasher
+  self:
+    path: app
