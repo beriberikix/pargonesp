@@ -1,0 +1,6 @@
+{
+  "image": "ghcr.io/embeddedcontainers/zephyr:arm-0.17.0SDK",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workdir/app,type=bind",
+  "workspaceFolder": "/workdir",
+  "onCreateCommand": "bash -i /workdir/app/.devcontainer/onCreateCommand.sh"
+}
