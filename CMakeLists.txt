@@ -25,3 +25,7 @@ create_resources(${CMAKE_CURRENT_LIST_DIR}/binaries/Hello-world ${CMAKE_BINARY_D
 set_property(SOURCE ${CMAKE_BINARY_DIR}/binaries.c PROPERTY GENERATED 1)
 
 target_sources(app PRIVATE src/main.c  ${CMAKE_BINARY_DIR}/binaries.c)
+
+if(DEFINED SERIAL_FLASHER_DEBUG_TRACE OR CONFIG_SERIAL_FLASHER_DEBUG_TRACE)
+    target_compile_definitions(esp_flasher INTERFACE SERIAL_FLASHER_DEBUG_TRACE=1)
+ endif()
